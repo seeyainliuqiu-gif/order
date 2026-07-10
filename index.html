@@ -1,213 +1,395 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.7">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>See Ya Bar 點餐系統</title>
+
+    <style>
+
+        body {
+
+            background: linear-gradient(135deg, #1f1135 0%, #0f081d 100%);
+
+            color: #fff;
+
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+
+            margin: 0;
+
+            padding: 20px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+        }
+
+        .header {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+        }
+
+        .header h1 {
+
+            font-size: 3em;
+
+            margin: 0;
+
+            color: #ff007f;
+
+            text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+
+        }
+
+        .header p {
+
+            color: #00ffff;
+
+            text-shadow: 0 0 5px #00ffff;
+
+            font-style: italic;
+
+        }
+
+        .container {
+
+            width: 100%;
+
+            max-width: 500px;
+
+            background: rgba(255, 255, 255, 0.05);
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+
+            backdrop-filter: blur(4px);
+
+            border: 1px solid rgba(255, 255, 255, 0.1);
+
+            box-sizing: border-box;
+
+        }
+
+        .input-group {
+
+            margin-bottom: 20px;
+
+        }
+
+        label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            color: #ffaa00;
+
+            font-weight: bold;
+
+        }
+
+        input[type="text"] {
+
+            width: 100%;
+
+            padding: 12px;
+
+            background: rgba(0,0,0,0.5);
+
+            border: 1px solid #ff007f;
+
+            border-radius: 8px;
+
+            color: white;
+
+            font-size: 16px;
+
+            box-sizing: border-box;
+
+        }
+
+        .menu-item {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 15px 0;
+
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+
+        }
+
+        .menu-item:last-child { border: none; }
+
+        .btn-count {
+
+            background: #00ffff;
+
+            border: none;
+
+            color: #000;
+
+            padding: 5px 12px;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+        }
+
+        .qty { margin: 0 10px; font-size: 18px; }
+
+        .footer-btn {
+
+            width: 100%;
+
+            background: linear-gradient(90deg, #ff007f, #ffaa00);
+
+            border: none;
+
+            color: white;
+
+            padding: 15px;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            border-radius: 8px;
+
+            margin-top: 20px;
+
+            cursor: pointer;
+
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+
+        }
+
+    </style>
+
 </head>
+
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="zh-TW"&gt;</p> 
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;See Ya Bar 點餐系統&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, #1f1135 0%, #0f081d 100%);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Helvetica Neue', Arial, sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.header h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3em;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #ff007f;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.header p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #00ffff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-shadow: 0 0 5px #00ffff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-style: italic;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 500px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.05);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(4px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255, 255, 255, 0.1);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.input-group {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>label {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #ffaa00;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>input[type="text"] {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(0,0,0,0.5);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #ff007f;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.menu-item {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid rgba(255,255,255,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.menu-item:last-child { border: none; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-count {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #00ffff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #000;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 5px 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 5px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.qty { margin: 0 10px; font-size: 18px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.footer-btn {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(90deg, #ff007f, #ffaa00);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: bold;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h1&gt;See Ya&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;小琉球‧深夜微醺&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="input-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;label&gt;📍 請輸入您的桌號 / 位置：&lt;/label&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="tableNum" placeholder="例如：桌號 5 或 吧台B"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3 style="color:#00ffff; border-bottom:1px solid #00ffff; padding-bottom:5px;"&gt;🍸 微醺酒單&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="menu-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span style="font-weight:bold;"&gt;招牌特調 See Ya Bar&lt;/span&gt;&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span style="color:#aaa; font-size:14px;"&gt;NT$ 350&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn-count" onclick="changeQty('item1', -1)"&gt;-&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="qty" id="item1"&gt;0&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn-count" onclick="changeQty('item1', 1)"&gt;+&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="menu-item"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span style="font-weight:bold;"&gt;島嶼海風 (無酒精)&lt;/span&gt;&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span style="color:#aaa; font-size:14px;"&gt;NT$ 180&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn-count" onclick="changeQty('item2', -1)"&gt;-&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="qty" id="item2"&gt;0&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;button class="btn-count" onclick="changeQty('item2', 1)"&gt;+&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="footer-btn" onclick="sendOrder()"&gt;確認送出 🍹&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let prices = { item1: 350, item2: 180 };</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let names = { item1: "招牌特調 See Ya Bar", item2: "島嶼海風 (無酒精)" };</p>
-<p class="p1"><span class="Apple-converted-space">        </span>let qty = { item1: 0, item2: 0 };</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function changeQty(id, val) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>qty[id] = Math.max(0, qty[id] + val);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById(id).innerText = qty[id];</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>function sendOrder() {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let table = document.getElementById('tableNum').value.trim();</p>
-<p class="p1"><span class="Apple-converted-space">            </span>if(!table) { alert('請輸入桌號！'); return; }</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>if(qty.item1 === 0 &amp;&amp; qty.item2 === 0) { alert('請至少點一杯酒水喔！'); return; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>let orderItems = [];</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let totalPrice = 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>for(let key in qty) {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>if(qty[key] &gt; 0) {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>orderItems.push(names[key] + " x" + qty[key]);</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>totalPrice += qty[key] * prices[key];</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>// ⚠️ 這裡請替換成你的 Google Apps Script 網址</p>
-<p class="p1"><span class="Apple-converted-space">            </span>let googleUrl = "https://script.google.com/macros/s/AKfycby0JYzialXEd8QIY_fQFVOS78SpvUBRT9JXG3aJzZ37xvbvFCfhDAk_CYSQuonybBl4/exec";</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>let orderData = {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>tableNum: table,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>orderItems: orderItems.join(", "),</p>
-<p class="p1"><span class="Apple-converted-space">                </span>totalPrice: "NT$ " + totalPrice</p>
-<p class="p1"><span class="Apple-converted-space">            </span>};</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>alert('正在幫您傳送訂單給櫃檯，請稍候...');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>fetch(googleUrl, {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>method: "POST",</p>
-<p class="p1"><span class="Apple-converted-space">                </span>method: "POST",</p>
-<p class="p1"><span class="Apple-converted-space">                </span>body: JSON.stringify(orderData)</p>
-<p class="p1"><span class="Apple-converted-space">            </span>})</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.then(res =&gt; res.json())</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.then(result =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>if(result.result === "success") {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>alert('🎉 點餐成功！酒水隨後就到，See Ya！');</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('tableNum').value = "";</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>qty.item1 = 0; qty.item2 = 0;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('item1').innerText = 0;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>document.getElementById('item2').innerText = 0;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>alert('❌ 傳送失敗，請舉手向服務生點餐！');</p>
-<p class="p1"><span class="Apple-converted-space">                </span>}</p>
-<p class="p1"><span class="Apple-converted-space">            </span>})</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.catch(err =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>alert('🎉 點餐成功！酒水隨後就到，See Ya！');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>});</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+
+
+    <div class="header">
+
+        <h1>See Ya</h1>
+
+        <p>小琉球‧深夜微醺</p>
+
+    </div>
+
+
+
+    <div class="container">
+
+        <div class="input-group">
+
+            <label>📍 請輸入您的桌號 / 位置：</label>
+
+            <input type="text" id="tableNum" placeholder="例如：桌號 5 或 吧台B">
+
+        </div>
+
+
+
+        <h3 style="color:#00ffff; border-bottom:1px solid #00ffff; padding-bottom:5px;">🍸 微醺酒單</h3>
+
+        <div class="menu-item">
+
+            <div>
+
+                <span style="font-weight:bold;">招牌特調 See Ya Bar</span><br>
+
+                <span style="color:#aaa; font-size:14px;">NT$ 350</span>
+
+            </div>
+
+            <div>
+
+                <button class="btn-count" onclick="changeQty('item1', -1)">-</button>
+
+                <span class="qty" id="item1">0</span>
+
+                <button class="btn-count" onclick="changeQty('item1', 1)">+</button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="menu-item">
+
+            <div>
+
+                <span style="font-weight:bold;">島嶼海風 (無酒精)</span><br>
+
+                <span style="color:#aaa; font-size:14px;">NT$ 180</span>
+
+            </div>
+
+            <div>
+
+                <button class="btn-count" onclick="changeQty('item2', -1)">-</button>
+
+                <span class="qty" id="item2">0</span>
+
+                <button class="btn-count" onclick="changeQty('item2', 1)">+</button>
+
+            </div>
+
+        </div>
+
+
+
+        <button class="footer-btn" onclick="sendOrder()">確認送出 🍹</button>
+
+    </div>
+
+
+
+    <script>
+
+        let prices = { item1: 350, item2: 180 };
+
+        let names = { item1: "招牌特調 See Ya Bar", item2: "島嶼海風 (無酒精)" };
+
+        let qty = { item1: 0, item2: 0 };
+
+
+
+        function changeQty(id, val) {
+
+            qty[id] = Math.max(0, qty[id] + val);
+
+            document.getElementById(id).innerText = qty[id];
+
+        }
+
+
+
+        function sendOrder() {
+
+            let table = document.getElementById('tableNum').value.trim();
+
+            if(!table) { alert('請輸入桌號！'); return; }
+
+            
+
+            if(qty.item1 === 0 && qty.item2 === 0) { alert('請至少點一杯酒水喔！'); return; }
+
+
+
+            let orderItems = [];
+
+            let totalPrice = 0;
+
+            for(let key in qty) {
+
+                if(qty[key] > 0) {
+
+                    orderItems.push(names[key] + " x" + qty[key]);
+
+                    totalPrice += qty[key] * prices[key];
+
+                }
+
+            }
+
+
+
+            // ⚠️ 這裡請替換成你的 Google Apps Script 網址
+
+            let googleUrl = "https://script.google.com/macros/s/AKfycby0JYzialXEd8QIY_fQFVOS78SpvUBRT9JXG3aJzZ37xvbvFCfhDAk_CYSQuonybBl4/exec";
+
+
+
+            let orderData = {
+
+                tableNum: table,
+
+                orderItems: orderItems.join(", "),
+
+                totalPrice: "NT$ " + totalPrice
+
+            };
+
+
+
+            alert('正在幫您傳送訂單給櫃檯，請稍候...');
+
+
+
+            fetch(googleUrl, {
+
+                method: "POST",
+
+                method: "POST",
+
+                body: JSON.stringify(orderData)
+
+            })
+
+            .then(res => res.json())
+
+            .then(result => {
+
+                if(result.result === "success") {
+
+                    alert('🎉 點餐成功！酒水隨後就到，See Ya！');
+
+                    document.getElementById('tableNum').value = "";
+
+                    qty.item1 = 0; qty.item2 = 0;
+
+                    document.getElementById('item1').innerText = 0;
+
+                    document.getElementById('item2').innerText = 0;
+
+                } else {
+
+                    alert('❌ 傳送失敗，請舉手向服務生點餐！');
+
+                }
+
+            })
+
+            .catch(err => {
+
+                alert('🎉 點餐成功！酒水隨後就到，See Ya！');
+
+            });
+
+        }
+
+    </script>
+
 </body>
-</html>
+
+</html> 
+
+老闆
